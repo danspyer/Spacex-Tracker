@@ -2,3 +2,12 @@
     color: white;
     font-weight: bold;
 }
+
+.NextLaunchContainer {
+    width: 100%;
+    height: 100%;
+}
+h2 {
+    font-size: 4em;
+    font-weight: bold;
+}

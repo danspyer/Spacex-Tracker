@@ -13,11 +13,13 @@ const queryClient = new QueryClient()
 function App() {
   return (
     <div className="App">
-      <div className="Background">
+      <div className="Background flexbox">
         <Navbar></Navbar>
 
         <QueryClientProvider client={queryClient}>
-          <NextLaunchLogic/>
+          <div className="Content">
+            <NextLaunchLogic/>
+          </div>
         </QueryClientProvider>
           
       </div>

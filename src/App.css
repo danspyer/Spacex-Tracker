@@ -23,7 +23,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,4 +42,34 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.flexbox {
+  display: flex;
+  height: 100vh;
+  flex-flow: column;
+}
+.Content {
+  flex: 1 1 auto;
+  margin: 0em 10em;
+}
+
+.FlexContainer-H {
+  display: flex;
+  flex-flow: row;
+}
+
+.FlexChild {
+  flex-grow: 1;
+}
+.h100 {
+  height: 100%;
+}
+.TextCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.LeftAlignText {
+  text-align: left;
 }

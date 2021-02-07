@@ -20,13 +20,12 @@ export const NextLaunchLogic = (props: any) => {
           return await response.json();
         });
       }
+
     const result = FetchLaunchData();
 
     let year:any = new Date().getFullYear();    
 
     return (
-        <div>
-            <NextLaunch show={result.status == "success"} data={result.data} />
-        </div>
+      <NextLaunch show={result.status == "success"} data={result.data} />
     );
 } 

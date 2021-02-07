@@ -1,0 +1,46 @@
+.countdownContainer {
+    max-width: 20em;
+    display: flex;
+    flex-direction: row;
+}
+
+.CountdownElement {
+    flex: 1 1 auto;
+    margin: auto;
+    background-color: rgba(255,255,255,0.2);
+    margin-right: 2em;
+    height: 6em;
+    min-width: 9em;
+    text-align: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+}
+
+.CountdownElement p {
+    font-size: 3em;
+}
+
+.CountdownElement.days::before { 
+    position: relative;
+    top: -10;
+    content: "Days";
+    font-weight: bold;
+  }
+  .CountdownElement.hours::before { 
+    position: relative;
+    top: -10;
+    content: "Hours";
+    font-weight: bold;
+  }
+  .CountdownElement.mins::before { 
+    position: relative;
+    top: -10;
+    content: "Minuites";
+    font-weight: bold;
+  }
+  .CountdownElement.seconds::before { 
+    position: relative;
+    top: -10;
+    content: "Seconds";
+    font-weight: bold;
+  }
