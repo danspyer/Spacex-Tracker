@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { CountdownProps } from "./Interface/CountdownProps";
 import "../CountdownClock/CountDownClock.css"
 
@@ -6,8 +6,8 @@ export const CountdownTimer = (props: CountdownProps) => {
 
     const [daysToGo, updateDays] = useState("");
     const [hoursToGo, updateHours] = useState("");
-    const [MinuitesToGo, updateMins] = useState("")
-    const [SecondsToGo, updateSecs] = useState("")
+    const [MinuitesToGo, updateMins] = useState("");
+    const [SecondsToGo, updateSecs] = useState("");
 
     setInterval( function() {
         if( props.target_date_unix == null)
@@ -15,25 +15,23 @@ export const CountdownTimer = (props: CountdownProps) => {
             return;
         }
 
-        var nowMS = Date.now();
-        console.log('NowMS: ' + nowMS);
+        var now_unix = Math.floor(Date.now() / 1000);
 
-        var LaunchUnixTime = props.target_date_unix * 1000
-        console.log('UNIX Time to launch: ' + LaunchUnixTime);
+        var launch_unix = props.target_date_unix;
 
-        var MSToLaunch = LaunchUnixTime - nowMS;
+        var SecondsToLaunch = launch_unix - now_unix;
 
-        var days = Math.floor(MSToLaunch / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((MSToLaunch % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((MSToLaunch % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((MSToLaunch % (1000 * 60)) / 1000);
+        var days = Math.floor(SecondsToLaunch / (60 * 60 * 24));
+        var hours = Math.floor((SecondsToLaunch % (60 * 60 * 24)) / (60 * 60));
+        var minutes = Math.floor((SecondsToLaunch % (60 * 60)) / (60));
+        var seconds = Math.floor((SecondsToLaunch % 60));
 
         updateDays(days.toString());
         updateHours(hours.toString());
         updateMins(minutes.toString());
         updateSecs(seconds.toString())
 
-    }, 1000 )
+    }, props.update_interval )
 
     return (
         <div>
@@ -53,4 +51,4 @@ export const CountdownTimer = (props: CountdownProps) => {
             </div>
         </div>
     );
-} 
+}
