@@ -1,6 +1,6 @@
 import React from "react";
 import { NextLaunchModel } from './Interface/NextLaunchModel'
-import {CountdownTimer} from '../CountdownClock/CountDownClock'
+import { CountdownTimer } from '../CountdownClock/CountDownClock'
 
 export interface NextLaunchProps {
     show: boolean,
