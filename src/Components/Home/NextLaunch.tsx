@@ -1,6 +1,6 @@
 import React from "react";
 import { NextLaunchModel } from './Interface/NextLaunchModel'
-import {CountdownTimer} from '../CountdownClock/CountDownClock'
+import { CountdownTimer } from '../CountdownClock/CountDownClock'
 
 export interface NextLaunchProps {
     show: boolean,
@@ -10,7 +10,6 @@ export interface NextLaunchProps {
 export const NextLaunch = (props: NextLaunchProps) => {
     return (
         <div className="NextLaunchContainer LaunchDate">
-
             <div className="FlexContainer-H h100">
                 <div className="FlexChild h100 TextCenter">
                     <div className="LeftAlignText">
@@ -25,7 +24,6 @@ export const NextLaunch = (props: NextLaunchProps) => {
                     </div>
                 </div>
             </div>
-            
         </div>
     );
 }
