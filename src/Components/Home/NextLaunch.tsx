@@ -11,7 +11,7 @@ export const NextLaunch = (props: NextLaunchProps) => {
     return (
         <div className="NextLaunchContainer LaunchDate">
             <div className="FlexContainer-H h100">
-                <div className="FlexChild h100 TextCenter">
+                <div className="FlexChild h100 TextCenter LaunchDescription">
                     <div className="LeftAlignText">
                         <h4> UPCOMING LAUNCH: </h4>
                         <h2>{props?.data?.name}</h2>

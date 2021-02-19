@@ -51,7 +51,10 @@
 }
 .Content {
   flex: 1 1 auto;
-  margin: 0em 10em;
+  margin: 0em 4em;
+  justify-content: center;
+  align-content: center;
+  display: flex;
 }
 
 .FlexContainer-H {
