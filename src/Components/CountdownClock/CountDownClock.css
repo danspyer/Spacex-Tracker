@@ -1,5 +1,5 @@
 .countdownContainer {
-    /* max-width: 20em; */
+    max-width: 40em;
     display: flex;
     flex-direction: row;
 }
@@ -8,16 +8,16 @@
     flex: 1 1 25%;
     margin: auto;
     background-color: rgba(255,255,255,0.2);
-    margin-right: 2em;
-    height: 6em;
-    max-width: 7em;
+    margin-right: 1em;
+    height: 5em;
+    max-width: 6em;
     text-align: center;
     justify-content: center;
     border-radius: 0.5rem;
 }
 
 .CountdownElement p {
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .CountdownElement.days::before { 
@@ -48,11 +48,11 @@
 /* screens up to 600px wide */
 @media only screen and (max-width: 1300px) {
   .CountdownElement {
-    max-width: 7em;
+    max-width: 6em;
   }
 
   .CountdownElement p {
-    font-size: 2,5em;
+    font-size: 2em;
   }
 
 }

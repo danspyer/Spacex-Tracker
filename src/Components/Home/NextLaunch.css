@@ -8,8 +8,16 @@
 }
 
 h2 {
-    font-size: 4em;
+    font-size: 2.5em;
     font-weight: bold;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+.LaunchDescription {
+    margin: 0rem 4rem;
 }
 
 /* screens up to 600px wide */
@@ -19,6 +27,6 @@ h2 {
     }
 
     h2 {
-        font-size: 3.5em;
+        font-size: 2.5em;
     }
 }

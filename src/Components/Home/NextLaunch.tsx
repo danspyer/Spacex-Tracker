@@ -16,6 +16,11 @@ export const NextLaunch = (props: NextLaunchProps) => {
                         <h4> UPCOMING LAUNCH: </h4>
                         <h2>{props?.data?.name}</h2>
                     </div>
+                    <div className="LeftAlignText mt-2">
+                        <button className="btn SpaceXBtn">
+                            View More
+                        </button>
+                    </div>
                 
                 </div>
                 <div className="FlexChild h100 TextCenter">

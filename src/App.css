@@ -76,3 +76,43 @@
 .LeftAlignText {
   text-align: left;
 }
+
+.SpaceXBtn {
+  z-index: 1;
+  border: 2px solid rgb(7, 63, 117) !important;
+  background-color: rgba(255, 240, 240, 0) !important;
+  color: white !important;
+  padding: 0.9rem 2rem;
+  font-size: 0.8em !important;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.SpaceXBtn:hover{
+  color: white;
+}
+
+.SpaceXBtn:after {
+  content: '';
+  position: absolute;
+  transition: all 0.3s;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background-color: rgb(7, 63, 117);
+  color: white;
+  z-index: -1;
+}
+
+.SpaceXBtn:hover:after,
+.SpaceXBtn:active:after {
+  height: 100%;
+} 
+
+
+p, h2, h4{
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
