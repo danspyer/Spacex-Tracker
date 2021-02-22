@@ -44,7 +44,7 @@
     text-transform: uppercase;
 }
 
-a {
+.NavLink a {
     letter-spacing: 0.15em;
     
     display: inline-block;
@@ -52,7 +52,7 @@ a {
     position: relative;
   }
 
-a:after {
+  .NavLink a:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";

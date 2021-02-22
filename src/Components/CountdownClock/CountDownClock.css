@@ -16,10 +16,6 @@
     border-radius: 0.5rem;
 }
 
-.CountdownElement p {
-    font-size: 2em;
-}
-
 .CountdownElement.days::before { 
   position: relative;
   top: -10;
@@ -50,9 +46,4 @@
   .CountdownElement {
     max-width: 6em;
   }
-
-  .CountdownElement p {
-    font-size: 2em;
-  }
-
 }

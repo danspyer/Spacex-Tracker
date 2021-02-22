@@ -77,7 +77,7 @@
   text-align: left;
 }
 
-.SpaceXBtn {
+button {
   z-index: 1;
   border: 2px solid rgb(7, 63, 117) !important;
   background-color: rgba(255, 240, 240, 0) !important;
@@ -89,11 +89,11 @@
   position: relative;
 }
 
-.SpaceXBtn:hover{
+button:hover{
   color: white;
 }
 
-.SpaceXBtn:after {
+button:after {
   content: '';
   position: absolute;
   transition: all 0.3s;
@@ -106,13 +106,31 @@
   z-index: -1;
 }
 
-.SpaceXBtn:hover:after,
-.SpaceXBtn:active:after {
+button:hover:after,
+button:active:after {
   height: 100%;
 } 
 
+.bold {
+  font-weight: bold;
+}
 
-p, h2, h4{
-  margin-bottom: 15px;
-  margin-top: 15px;
+/* screens up to 1300px wide */
+@media only screen and (max-width: 1300px) {
+  p {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+
+  h4 {
+      font-size: 1em;
+  }
+
 }
