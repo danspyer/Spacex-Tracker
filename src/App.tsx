@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <div className="Background flexbox">
-        <Navbar></Navbar>
+        <Navbar/>
 
         <QueryClientProvider client={queryClient}>
           <div className="Content">
