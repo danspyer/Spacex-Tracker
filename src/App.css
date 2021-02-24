@@ -51,7 +51,7 @@
 }
 .Content {
   flex: 1 1 auto;
-  margin: 0em 4em;
+  margin: 0em 8em;
   justify-content: center;
   align-content: center;
   display: flex;
@@ -83,7 +83,6 @@ button {
   background-color: rgba(255, 240, 240, 0) !important;
   color: white !important;
   padding: 0.9rem 2rem;
-  font-size: 0.8em !important;
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -115,6 +114,25 @@ button:active:after {
   font-weight: bold;
 }
 
+p {
+  font-size: 1em;
+}
+
+h2 {
+  font-size: 3.5em;
+}
+
+h3 {
+  font-size: 2.5em;
+}
+
+h4 {
+    font-size: 2em;
+}
+button {
+  font-size: 2em;
+}
+
 /* screens up to 1300px wide */
 @media only screen and (max-width: 1300px) {
   p {
@@ -131,6 +149,10 @@ button:active:after {
 
   h4 {
       font-size: 1em;
+  }
+  
+  button {
+    font-size: 0.8em;
   }
 
 }

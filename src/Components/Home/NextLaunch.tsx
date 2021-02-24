@@ -18,15 +18,19 @@ export const NextLaunch = (props: NextLaunchProps) => {
                                 <h4> UPCOMING LAUNCH: </h4>
                                 <h2 className="bold">{props?.data?.name}</h2>
                             </div>
-                            <div className="LeftAlignText mt-2">
-                                <button className="btn SpaceXBtn">
-                                    View More
-                                </button>
-                            </div>
                         </div>
                         <div className="col-6">
                             <div className="LeftAlignText">
                                 <CountdownTimer target_date_unix={props.data?.date_unix} update_interval={1000} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="LeftAlignText mt-2">
+                                <button className="btn SpaceXBtn">
+                                    <a> View More </a>
+                                </button>
                             </div>
                         </div>
                     </div>

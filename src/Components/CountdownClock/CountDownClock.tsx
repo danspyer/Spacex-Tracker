@@ -36,16 +36,20 @@ export const CountdownTimer = (props: CountdownProps) => {
     return (
         <div>
             <div className="countdownContainer">
-                <div className="CountdownElement days">
+                <div className="CountdownElement">
+                    <p>Days</p>
                     <h3 className="bold">{daysToGo}</h3>
                 </div>
-                <div className="CountdownElement hours">
+                <div className="CountdownElement">
+                    <p>Hours</p>
                     <h3 className="bold">{hoursToGo}</h3>
                 </div>
-                <div className="CountdownElement mins">
+                <div className="CountdownElement">
+                    <p>Mins</p>
                     <h3 className="bold">{MinuitesToGo}</h3>
                 </div>
-                <div className="CountdownElement seconds">
+                <div className="CountdownElement">
+                    <p>Secs</p>
                     <h3 className="bold">{SecondsToGo}</h3>
                 </div>
             </div>
