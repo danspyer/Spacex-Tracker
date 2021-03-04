@@ -51,7 +51,7 @@
 }
 .Content {
   flex: 1 1 auto;
-  margin: 0em 8em;
+  margin: 0em 15em;
   justify-content: center;
   align-content: center;
   display: flex;
@@ -153,6 +153,10 @@ button {
   
   button {
     font-size: 0.8em;
+  }
+
+  .Content {
+    margin: 0em 8em;
   }
 
 }

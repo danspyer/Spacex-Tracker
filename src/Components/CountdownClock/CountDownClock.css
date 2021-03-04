@@ -1,14 +1,13 @@
 .countdownContainer {
-    max-width: 40em;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
 }
 
 .CountdownElement {
     flex: 1 1 25%;
-    margin: auto;
     background-color: rgba(255,255,255,0.2);
-    margin-right: 1em;
+    margin-right: 2em;
     height: 6em;
     max-width: 9em;
     text-align: center;

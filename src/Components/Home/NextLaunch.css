@@ -17,3 +17,24 @@
         max-width: 55%;
     }
 }
+
+.darkBackground {
+    background-color: rgba(17, 9, 9, 0.452);
+}
+
+.table thead th {
+    border-bottom: 0px;
+}
+
+.table td {
+    border-top: 0px;
+    border-bottom: solid 1px rgb(134,134,134);
+    color: white;
+}
+
+.table tbody tr td:nth-child(odd) {
+    text-align: left;
+}
+.table tbody tr td:nth-child(even) {
+    text-align: right;
+}
