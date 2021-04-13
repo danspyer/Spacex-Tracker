@@ -1,7 +1,9 @@
 import React from "react";
-import { NextLaunchModel } from './Interface/NextLaunchModel'
+import { NextLaunchModel, landPad } from './Interface/NextLaunchModel'
 import { CountdownTimer } from '../CountdownClock/CountDownClock'
 import { useState } from 'react';
+import { useQuery, UseQueryResult } from "react-query";
+import { countReset } from "console";
 
 export interface NextLaunchProps {
     show: boolean,
@@ -9,30 +11,49 @@ export interface NextLaunchProps {
 };
 
 const LaunchDetails = (props: NextLaunchProps) => {
+    function FetchLaunchDataExtended() {
+        return useQuery<landPad, Error>("launchPad", async () => {
+            if(props?.data?.cores[0]?.landpad != undefined)
+            {
+                const response = await fetch("https://api.spacexdata.com/v4/landpads/" + props?.data?.cores[0]?.landpad);
+        
+                if (!response.ok) {
+                    throw new Error("Failed to fetch!");
+                }
+            
+                return await response.json()
+            }
+        });
+    }
+    let result: UseQueryResult<landPad, Error>;
+
+    result = FetchLaunchDataExtended();
+    let x = props?.data?.date_utc as Date
+    let date = new Date(x);
     return (
-        <div className="row darkBackground mt-5">
+        <div className="row darkBackground mt-5 launchDetails">
             <div className="col-6 text-left mt-4 mb-4 pl-4">
                 <h4>{props?.data?.name}</h4>
-                <p>Check back soon for more info</p>
+                <p>{props?.data?.details}</p>
             </div>
-            <div className="col-6 mt-4 mb-4">
+            <div className="col-6 mt-4 mb-4 launchDetailsTable">
                 <table className="table ">
                     <tbody>
                         <tr>
                             <td>SCHEDULED LAUNCH</td>
-                            <td>March 10, 2021</td>
+                            <td>{date.toDateString()}</td>
                         </tr>
                         <tr>
                             <td>REUSED</td>
-                            <td>Yes</td>
+                            <td>{props?.data?.cores[0]?.reused? 'YES': 'NO'}</td>
                         </tr>
                         <tr>
                             <td>PAYLOAD ORBIT</td>
                             <td>LEO</td>
                         </tr>
                         <tr>
-                            <td>LANDING ZONE</td>
-                            <td>DRONESHIP, OCISLY</td>
+                            <td>LANDING PAD</td>
+                            <td>{result?.data?.full_name ? result?.data?.full_name : 'TBC'}</td>
                         </tr>
                     </tbody>
                 </table>

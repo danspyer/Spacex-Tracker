@@ -11,6 +11,20 @@
     margin: 0rem 4rem;
 }
 
+.launchDetailsTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.launchDetails p {
+    font-weight: normal;
+}
+
+.launchDetails h4 {
+    font-weight: bold;
+}
+
 /* screens up to 600px wide */
 @media only screen and (max-width: 1300px) {
     .LaunchDescription {
