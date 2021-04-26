@@ -8,29 +8,19 @@ export const Navbar = (props: any) => {
         <div className="NavBar-Container">
             <Link className="Logo-Container" to="/" ><img className="Logo" src={logo} alt="SpaceX Logo"></img></Link>
             <Link className="NavLink" to="/vehicles/falcon1" >
-                <div className="">
-                    <a href="#Placeholder"> Falcon 1 </a>
-                </div>
+                <a href="#Placeholder"> Falcon 1 </a>
             </Link>
             <Link className="NavLink" to="/vehicles/falcon9" >
-                <div className="">
-                    <a href="#Placeholder"> Falcon 9 </a>
-                </div>
+                <a href="#Placeholder"> Falcon 9 </a>
             </Link>
             <Link className="NavLink" to="/vehicles/falconHeavy" >
-                <div className="">
-                    <a href="#Placeholder"> Falcon Heavy </a>
-                </div>
+                <a href="#Placeholder"> Falcon Heavy </a>
             </Link>
             <Link className="NavLink" to="/vehicles/dragon" >
-                <div className="">
-                    <a href="#Placeholder"> Dragon </a>
-                </div>
+                <a href="#Placeholder"> Dragon </a>
             </Link>
             <Link className="NavLink" to="/vehicles/starship" >
-                <div className="">
-                    <a href="#Placeholder"> Starship </a>
-                </div>
+                <a href="#Placeholder"> Starship </a>
             </Link>
         </div>
     );
