@@ -7,9 +7,6 @@ export const Navbar = (props: any) => {
     return (
         <div className="NavBar-Container">
             <Link className="Logo-Container" to="/" ><img className="Logo" src={logo} alt="SpaceX Logo"></img></Link>
-            <Link className="NavLink" to="/vehicles/falcon1" >
-                <a href="#Placeholder"> Falcon 1 </a>
-            </Link>
             <Link className="NavLink" to="/vehicles/falcon9" >
                 <a href="#Placeholder"> Falcon 9 </a>
             </Link>

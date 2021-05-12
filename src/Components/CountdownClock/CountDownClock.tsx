@@ -34,7 +34,7 @@ export const CountdownTimer = (props: CountdownProps) => {
     }, props.update_interval )
 
     return (
-        <div>
+        <div style={{ paddingTop:"30px" }}>
             <div className="countdownContainer">
                 <div className="CountdownElement">
                     <p>Days</p>

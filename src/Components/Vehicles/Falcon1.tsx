@@ -37,7 +37,6 @@ export const Vehicle = (props: RouteComponentProps<TParams>) =>
       }
       return await response.json()
     });
-    
   }
 
   const results = FetchRocketData()
@@ -46,9 +45,50 @@ export const Vehicle = (props: RouteComponentProps<TParams>) =>
         <div className="FlexContainer-H h100">
             <div className="FlexChild h100 TextCenter container-fluid">
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-6 offset-sm-6">
                         <div className="LeftAlignText">
-                            <h2 className="bold">{results.data?.name}</h2>
+                            <p className="VehicleName">{results.data?.name}</p>
+                            <p>OVERVIEW</p>
+                        </div>
+                        <div>
+                          <div className="col-8 mt-4 mb-4 pl-0">
+                              <table className="table ">
+                                  <tbody>
+                                      <tr>
+                                          <td>HEIGHT</td>
+                                          { results.data?.name === "Dragon 2" ? (
+                                            <td>{results.data?.height_w_trunk.meters} m</td>
+                                          ) : (
+                                            <td>{results.data?.height?.meters} m</td>
+                                          ) }
+                                      </tr>
+                                      <tr>
+                                          <td>DIAMETER</td>
+                                          <td>{results.data?.diameter?.meters} m</td>
+                                      </tr>
+                                      <tr>
+                                          <td>MASS</td>
+                                          { results.data?.name === "Dragon 2" ? (
+                                            <td>{results.data?.dry_mass_kg} kg</td>
+                                          ) : (
+                                            <td>{results.data?.mass?.kg} kg</td>
+                                          ) }
+                                      </tr>
+                                      <tr>
+                                          <td>PAYLOAD TO LEO</td>
+                                          <td>0 kg</td>
+                                      </tr>
+                                      <tr>
+                                          <td>PAYLOAD TO GTO</td>
+                                          <td>0 kg</td>
+                                      </tr>
+                                      <tr>
+                                          <td>PAYLOAD TO MARS</td>
+                                          <td>0 kg</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
                         </div>
                     </div>
                 </div>
