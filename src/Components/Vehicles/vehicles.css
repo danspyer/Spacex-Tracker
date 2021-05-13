@@ -1,0 +1,32 @@
+.falcon9Img {
+    background: url("/src/Images/Vehicles/Falcon9.png") no-repeat;
+    height: 60vh;
+    width: 100px;
+    background-position-y: center;
+    background-position-x: center;
+}
+
+.falconHeavyImg {
+    background: url("/src/Images/Vehicles/FalconHeavy.png") no-repeat;
+    height: 60vh;
+    width: 100px;
+    background-position-y: center;
+    background-position-x: center;
+}
+.dragonImg {
+    background: url("/src/Images/Vehicles/Dragon2.png") no-repeat;
+    height: auto;
+    width: 70px;;
+    background-position-y: center;
+    background-position-x: center;
+}
+.starshipImg {
+    background: url("/src/Images/Vehicles/Starship.png") no-repeat;
+    height: 60vh;
+    width: 100px;
+    background-position-y: center;
+    background-position-x: center;
+}
+.VehicleDataTable {
+    align-self: center;
+}
