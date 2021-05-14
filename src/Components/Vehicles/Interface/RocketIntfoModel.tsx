@@ -6,23 +6,26 @@ export interface RocketInfoModel {
     dry_mass_kg: number;
     dry_mass_lb: number;
     height_w_trunk: height_w_trunk;
+    payload_weights: payload_weights[];
 }
-export interface diameter {
+interface diameter {
     meters: number;
+    feet: number;
 }
-export interface height {
+interface height {
     meters: number;
+    feet: number;
 }
-export interface mass {
+interface mass {
     kg: number;
+    lb: number;
 }
-export interface payload_weights {
+interface payload_weights {
     id: string;
     kg: number;
+    lb: number;
 }
-
-export interface height_w_trunk {
+interface height_w_trunk {
     meters: number;
+    feet: number;
 }
-
-

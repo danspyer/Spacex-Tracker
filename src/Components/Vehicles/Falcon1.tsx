@@ -52,42 +52,42 @@ export const Vehicle = (props: RouteComponentProps<TParams>) => {
 
                   <div className="LeftAlignText">
                     <p className="VehicleName">{results.data?.name}</p>
-                    <p>OVERVIEW</p>
+                    <p className="PanelHeading">OVERVIEW</p>
                   </div>
 
-                  <table className="table ">
+                  <table className="table">
                     <tbody>
                       <tr>
                         <td>HEIGHT</td>
                         {results.data?.name === "Dragon 2" ? (
-                          <td>{results.data?.height_w_trunk.meters} m</td>
+                          <td>{results.data?.height_w_trunk.meters} m <span>/ {results.data?.height_w_trunk.feet} ft</span></td>
                         ) : (
-                          <td>{results.data?.height?.meters} m</td>
+                          <td>{results.data?.height?.meters} m <span>/ {results.data?.height.feet} ft</span></td>
                         )}
                       </tr>
                       <tr>
                         <td>DIAMETER</td>
-                        <td>{results.data?.diameter?.meters} m</td>
+                        <td>{results.data?.diameter?.meters} m <span>/ {results.data?.diameter.feet} ft</span></td>
                       </tr>
                       <tr>
                         <td>MASS</td>
                         {results.data?.name === "Dragon 2" ? (
                           <td>{results.data?.dry_mass_kg} kg</td>
                         ) : (
-                          <td>{results.data?.mass?.kg} kg</td>
+                          <td>{results.data?.mass?.kg} kg <span>/ {results.data?.mass.lb} lb</span></td>
                         )}
                       </tr>
                       <tr>
                         <td>PAYLOAD TO LEO</td>
-                        <td>0 kg</td>
+                        <td>{results.data?.payload_weights[0].kg} kg <span>/ {results.data?.payload_weights[0].lb} lb</span></td>
                       </tr>
                       <tr>
                         <td>PAYLOAD TO GTO</td>
-                        <td>0 kg</td>
+                        <td>{results.data?.payload_weights[1].kg} kg <span>/ {results.data?.payload_weights[1].lb} lb</span></td>
                       </tr>
                       <tr>
                         <td>PAYLOAD TO MARS</td>
-                        <td>0 kg</td>
+                        <td>{results.data?.payload_weights[2].kg} kg <span>/ {results.data?.payload_weights[2].lb} lb</span></td>
                       </tr>
                     </tbody>
                   </table>
