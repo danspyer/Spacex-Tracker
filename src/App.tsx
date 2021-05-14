@@ -22,7 +22,7 @@ function App() {
           <Navbar/>
           <QueryClientProvider client={queryClient}>
             <div className="Content">
-            <Landing/>
+              <Route path="/" component={Landing} />
             </div>
           </QueryClientProvider>
         </div>
