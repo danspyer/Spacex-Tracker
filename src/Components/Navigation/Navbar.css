@@ -48,6 +48,10 @@
     position: relative;
 }
 
+a:hover {
+    text-decoration: none !important;
+}
+
 .NavLink a:after {
 background: none repeat scroll 0 0 transparent;
 bottom: 0;
