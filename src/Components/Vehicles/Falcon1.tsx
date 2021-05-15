@@ -1,5 +1,5 @@
 import { RouteComponentProps } from "react-router-dom";
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { useQuery, UseQueryResult } from "react-query";
 import { RocketInfoModel } from '../Vehicles/Interface/RocketIntfoModel'
 
@@ -46,7 +46,7 @@ export const Vehicle = (props: RouteComponentProps<TParams>) => {
       <div className="FlexContainer-H h100">
         <div className="FlexChild h100 TextCenter container-fluid">
           <div className="row">
-            <div className="col-6 offset-sm-6">
+            <div className="col-6 offset-6 col-lg-12  offset-lg-0 ">
               <div className="row">
                 <div className="col-8 mt-4 mb-4 pl-0 VehicleDataTable">
 
@@ -78,22 +78,35 @@ export const Vehicle = (props: RouteComponentProps<TParams>) => {
                         )}
                       </tr>
                       <tr>
-                        <td>PAYLOAD TO LEO</td>
-                        <td>{results.data?.payload_weights[0].kg} kg <span>/ {results.data?.payload_weights[0].lb} lb</span></td>
+                        {results.data?.name === "Dragon 2" ? (
+                          <Fragment>
+                            <td>LAUNCH PAYLOAD MASS</td>
+                            <td> 10 kg </td>
+                          </Fragment>
+                        ) : (
+                          <Fragment>
+                            <td>PAYLOAD TO LEO</td>
+                            <td>{results.data?.payload_weights[0]?.kg} kg <span>/ {results.data?.payload_weights[0]?.lb} lb</span></td>
+                          </Fragment>
+                        )}
                       </tr>
                       <tr>
-                        <td>PAYLOAD TO GTO</td>
-                        <td>{results.data?.payload_weights[1].kg} kg <span>/ {results.data?.payload_weights[1].lb} lb</span></td>
-                      </tr>
-                      <tr>
-                        <td>PAYLOAD TO MARS</td>
-                        <td>{results.data?.payload_weights[2].kg} kg <span>/ {results.data?.payload_weights[2].lb} lb</span></td>
+                        {results.data?.name === "Dragon 2" ? (
+                          <Fragment>
+                            <td>RETURN PAYLOAD MASS</td>
+                            <td> 10kg </td>
+                          </Fragment>
+                        ) : (
+                          <Fragment>
+                            <td>PAYLOAD TO GTO</td>
+                            <td>{results.data?.payload_weights[0]?.kg} kg <span>/ {results.data?.payload_weights[0]?.lb} lb</span></td>
+                          </Fragment>
+                        )}
                       </tr>
                     </tbody>
                   </table>
                 </div>
-                <div className={"col-4 " + props.match.params.vehicle + "Img"}>
-                  
+                <div className={"col-4 offset-0 col-lg-3 offset-lg-1  " + props.match.params.vehicle + "Img"}>
                 </div>
               </div>
 
