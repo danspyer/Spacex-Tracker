@@ -17,7 +17,8 @@ export const OrbitViewer = () => {
         // === THREE.JS CODE START ===
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera( 60, 1000/1000, 1, 2000 );
-        var renderer = new THREE.WebGLRenderer( { antialias: true } );
+        var renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+        scene.background = null;
         renderer.setSize( 1000, 1000);
 
         var element = document.getElementById('threejsRender');
@@ -25,7 +26,7 @@ export const OrbitViewer = () => {
         {
             element.appendChild(renderer.domElement);
         }
-        
+
         const geometry = new THREE.SphereGeometry(200, 50, 50, 0, Math.PI * 2);
         const material = new THREE.MeshBasicMaterial();
         material.map = new THREE.TextureLoader().load(img);
