@@ -48,7 +48,7 @@ export const Vehicle = (props: RouteComponentProps<TParams>) => {
           <div className="row">
             <div className="col-6 offset-6 col-lg-12  offset-lg-0 ">
               <div className="row">
-                <div className="col-8 mt-4 mb-4 pl-0 VehicleDataTable">
+                <div className="col-lg-8 offset-lg-0 col-4 offset-4 mt-4 mb-4 pl-0 VehicleDataTable">
 
                   <div className="LeftAlignText">
                     <p className="VehicleName">{results.data?.name}</p>

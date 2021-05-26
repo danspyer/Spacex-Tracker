@@ -19,6 +19,9 @@ export const Navbar = (props: any) => {
             <Link className="NavLink" to="/vehicles/starship" >
                 <a href="#Placeholder"> Starship </a>
             </Link>
+            <Link className="NavLink" to="/orbit" >
+                <a href="#Placeholder"> Orbit Page </a>
+            </Link>
         </div>
     );
 };

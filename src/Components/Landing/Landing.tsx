@@ -3,6 +3,7 @@ import { BrowserRouter as  Router, Route, Link, Switch, useHistory } from 'react
 import {Vehicle} from '../Vehicles/Falcon1'
 import { NextLaunchLogic } from '../Home/NextLaunchLogic'
 import {RocketInfoModel} from '../Vehicles/Interface/RocketIntfoModel'
+import {OrbitViewer} from '../OrbitViewer/OrbitViewer'
 
 export const Landing = (props: any) => {
 
@@ -54,6 +55,7 @@ export const Landing = (props: any) => {
             <Switch>
                 <Route exact path="/" component={NextLaunchLogic}/>
                 <Route exact path="/vehicles/:vehicle" component={Vehicle}/>
+                <Route exact path="/orbit" component={OrbitViewer}/>
               </Switch>
         </div>
     );
