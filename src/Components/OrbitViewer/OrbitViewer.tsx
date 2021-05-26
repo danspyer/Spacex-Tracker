@@ -1,7 +1,7 @@
 import { RouteComponentProps } from "react-router-dom";
 import { Component, useEffect } from 'react';
 import { useQuery, UseQueryResult } from "react-query";
-import { RocketInfoModel } from '../Vehicles/Interface/RocketIntfoModel'
+import img from '../OrbitViewer/LqQZu.jpg'
 import * as THREE from 'three';
 
 
@@ -16,13 +16,9 @@ export const OrbitViewer = () => {
     useEffect(() => {
         // === THREE.JS CODE START ===
         var scene = new THREE.Scene();
-        var camera = new THREE.PerspectiveCamera( 75, 1000/1000, 0.1, 1000 );
+        var camera = new THREE.PerspectiveCamera( 60, 1000/1000, 1, 2000 );
         var renderer = new THREE.WebGLRenderer( { antialias: true } );
         renderer.setSize( 1000, 1000);
-
-        const directionalLight = new THREE.DirectionalLight( 0xffffff, API.directionalLightIntensity );
-        directionalLight.position.set( 10, 10, 10 );
-        scene.add( directionalLight );
 
         var element = document.getElementById('threejsRender');
         if(element != null)
@@ -30,19 +26,20 @@ export const OrbitViewer = () => {
             element.appendChild(renderer.domElement);
         }
         
-        const geometry = new THREE.SphereGeometry(1.5, 50, 50, 0, Math.PI * 2, 0, Math.PI * 2);
-        const material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+        const geometry = new THREE.SphereGeometry(200, 50, 50, 0, Math.PI * 2);
+        const material = new THREE.MeshBasicMaterial();
+        material.map = new THREE.TextureLoader().load(img);
         const sphere = new THREE.Mesh( geometry, material );
         scene.add( sphere );
-        camera.position.z = 5;
+        camera.position.z = 500;
 
         var animate = function () {
             requestAnimationFrame( animate );
-            sphere.rotation.x += 0.01;
-            sphere.rotation.y += 0.01;
+            sphere.rotation.y += 0.002;
             renderer.render( scene, camera );
         };
 
+        // https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg
         animate();
         // === THREE.JS EXAMPLE CODE END ===
     });
