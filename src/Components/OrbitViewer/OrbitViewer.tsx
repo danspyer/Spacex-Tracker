@@ -1,8 +1,9 @@
 import { RouteComponentProps } from "react-router-dom";
 import { Component, useEffect } from 'react';
 import { useQuery, UseQueryResult } from "react-query";
-import img from '../OrbitViewer/LqQZu.jpg'
+import img from '../OrbitViewer/world_shaded_43kv2.jpg'
 import * as THREE from 'three';
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 
 
 export const OrbitViewer = () => {
@@ -32,11 +33,23 @@ export const OrbitViewer = () => {
         material.map = new THREE.TextureLoader().load(img);
         const sphere = new THREE.Mesh( geometry, material );
         scene.add( sphere );
+
+        // var pivotPoint = new THREE.Object3D();
+        // sphere.add(pivotPoint);
+
         camera.position.z = 500;
+
+        // var satGeometry = new THREE.SphereGeometry();
+        // var satMaterial = new THREE.MeshBasicMaterial();
+        // const satmesh = new THREE.Mesh( satGeometry, satMaterial );
+        // pivotPoint.add(satmesh);
+
+        const controls = new OrbitControls( camera, renderer.domElement );
 
         var animate = function () {
             requestAnimationFrame( animate );
-            sphere.rotation.y += 0.002;
+            //sphere.rotation.x += 0.002;
+            //sphere.rotation.y += 0.002;
             renderer.render( scene, camera );
         };
 
