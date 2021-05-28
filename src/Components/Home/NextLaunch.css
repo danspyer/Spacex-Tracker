@@ -1,0 +1,54 @@
+.LaunchDate {
+    color: white;
+    font-weight: bold;
+}
+
+.NextLaunchContainer {
+    width: 100%;
+}
+
+.LaunchDescription {
+    margin: 0rem 4rem;
+}
+
+.launchDetailsTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.launchDetails p {
+    font-weight: normal;
+}
+
+.launchDetails h4 {
+    font-weight: bold;
+}
+
+/* screens up to 600px wide */
+@media only screen and (max-width: 1300px) {
+    .LaunchDescription {
+        max-width: 55%;
+    }
+}
+
+.darkBackground {
+    background-color: rgba(17, 9, 9, 0.452);
+}
+
+.table thead th {
+    border-bottom: 0px;
+}
+
+.table td {
+    border-top: 0px;
+    border-bottom: solid 1px rgb(134,134,134);
+    color: white;
+}
+
+.table tbody tr td:nth-child(odd) {
+    text-align: left;
+}
+.table tbody tr td:nth-child(even) {
+    text-align: right;
+}

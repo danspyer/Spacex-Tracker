@@ -1,0 +1,27 @@
+.countdownContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.CountdownElement {
+    flex: 1 1 25%;
+    background-color: rgba(255,255,255,0.2);
+    margin-right: 2em;
+    height: 6em;
+    max-width: 9em;
+    text-align: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+}
+
+.CountdownElement p {
+  margin-bottom: 0.5em;;
+}
+
+/* screens up to 600px wide */
+@media only screen and (max-width: 1300px) {
+  .CountdownElement {
+    max-width: 6em;
+  }
+}

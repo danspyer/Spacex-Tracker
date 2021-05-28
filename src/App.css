@@ -7,7 +7,7 @@
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  background-position-y: -250px;
+  background-position-y: center;
 }
 
 .App-logo {
@@ -23,7 +23,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,4 +42,121 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.flexbox {
+  display: flex;
+  height: 100vh;
+  flex-flow: column;
+}
+.Content {
+  flex: 1 1 auto;
+  margin: 0em 15em;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+}
+
+.FlexContainer-H {
+  display: flex;
+  flex-flow: row;
+}
+
+.FlexChild {
+  flex-grow: 1;
+}
+.h100 {
+  height: 100%;
+}
+.TextCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.LeftAlignText {
+  text-align: left;
+}
+
+button {
+  z-index: 1;
+  border: 2px solid rgb(7, 63, 117) !important;
+  background-color: rgba(255, 240, 240, 0) !important;
+  color: white !important;
+  padding: 0.9rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+button:hover{
+  color: white;
+}
+
+button:after {
+  content: '';
+  position: absolute;
+  transition: all 0.3s;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background-color: rgb(7, 63, 117);
+  color: white;
+  z-index: -1;
+}
+
+button:hover:after,
+button:active:after {
+  height: 100%;
+} 
+
+.bold {
+  font-weight: bold;
+}
+
+p {
+  font-size: 1em;
+}
+
+h2 {
+  font-size: 3.5em;
+}
+
+h3 {
+  font-size: 2.5em;
+}
+
+h4 {
+    font-size: 2em;
+}
+button {
+  font-size: 2em;
+}
+
+/* screens up to 1300px wide */
+@media only screen and (max-width: 1300px) {
+  p {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+
+  h4 {
+      font-size: 1em;
+  }
+  
+  button {
+    font-size: 0.8em;
+  }
+
+  .Content {
+    margin: 0em 8em;
+  }
+
 }

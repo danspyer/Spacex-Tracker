@@ -1,0 +1,91 @@
+.TransparentNav {
+    background: rgba(0,0,0,0.4);
+}
+
+.Logo {
+    max-height: 2.3em;
+}
+
+.navbar-brand {
+    padding: 0 1em 0 1em;
+}
+
+.NavBar-Container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.9rem 4rem;
+}
+
+.Logo-Container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: auto;
+    margin-left: 0;
+}
+
+.NavLink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+    font-size: .8rem; 
+    text-align: center;
+    position: relative;
+}
+
+.NavLink a {
+    text-decoration: none;
+    /* font-size: .6rem; */ 
+    font-weight: 500;
+    margin-top: 10px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 15px 10px;
+    position: relative;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.NavLink a:after {
+background: none repeat scroll 0 0 transparent;
+bottom: 0;
+content: "";
+display: block;
+height: 2px;
+left: 50%;
+position: absolute;
+background: #fff;
+transition: width 0.4s ease 0s, left 0.4s ease 0s;
+width: 0;
+}
+
+.NavLink a:hover { 
+    text-decoration: none;
+}
+
+.NavLink a:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
+
+.NavLink a:hover{
+    color: white;
+}
+
+/* screens up to 1300px wide */
+@media only screen and (max-width: 1300px) {
+    .NavLink a {
+        font-size: .6rem; 
+    }
+
+    .Logo {
+        max-height: 2em;
+    }
+
+}
