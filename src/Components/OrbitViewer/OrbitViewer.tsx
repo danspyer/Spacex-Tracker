@@ -1,7 +1,7 @@
 import { RouteComponentProps } from "react-router-dom";
 import { Component, useEffect } from 'react';
 import { useQuery, UseQueryResult } from "react-query";
-import img from '../OrbitViewer/world_shaded_43kv2.jpg'
+import img from '../OrbitViewer/World_Map.png'
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 
@@ -28,28 +28,42 @@ export const OrbitViewer = () => {
             element.appendChild(renderer.domElement);
         }
 
-        const geometry = new THREE.SphereGeometry(200, 50, 50, 0, Math.PI * 2);
+        // earth Mesh 
+        
         const material = new THREE.MeshBasicMaterial();
         material.map = new THREE.TextureLoader().load(img);
-        const sphere = new THREE.Mesh( geometry, material );
-        scene.add( sphere );
+        const geometry = new THREE.SphereGeometry(50, 50, 50, 0, Math.PI * 2);
+        const earth = new THREE.Mesh( geometry, material );
+        
 
-        // var pivotPoint = new THREE.Object3D();
-        // sphere.add(pivotPoint);
+        // Orbit item mesh
+        var satMaterial = new THREE.MeshBasicMaterial({color:'#f08080'});
+        var satGeometry = new THREE.SphereGeometry(2, 10, 10, 0, Math.PI * 2);
+        const satelite = new THREE.Mesh( satGeometry, satMaterial );
+        satelite.position.x = 100;
 
-        camera.position.z = 500;
+        earth.add(satelite);
+        scene.add( earth );
 
-        // var satGeometry = new THREE.SphereGeometry();
-        // var satMaterial = new THREE.MeshBasicMaterial();
-        // const satmesh = new THREE.Mesh( satGeometry, satMaterial );
-        // pivotPoint.add(satmesh);
+
+        camera.position.z = 300;
 
         const controls = new OrbitControls( camera, renderer.domElement );
 
+        controls.enableZoom = true;
+
+        controls.maxZoom = 5.0;
+
         var animate = function () {
             requestAnimationFrame( animate );
-            //sphere.rotation.x += 0.002;
-            //sphere.rotation.y += 0.002;
+            
+            satelite.position.set(0, 0, 0);
+            satelite.rotateY(0.03)
+            satelite.translateX(100);
+
+            earth.position.set(0, 0, 0);
+            earth.rotation.y += 0.001;
+
             renderer.render( scene, camera );
         };
 
