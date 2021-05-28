@@ -29,13 +29,11 @@ export const OrbitViewer = () => {
         }
 
         // earth Mesh 
-        
         const material = new THREE.MeshBasicMaterial();
         material.map = new THREE.TextureLoader().load(img);
         const geometry = new THREE.SphereGeometry(50, 50, 50, 0, Math.PI * 2);
         const earth = new THREE.Mesh( geometry, material );
         
-
         // Orbit item mesh
         var satMaterial = new THREE.MeshBasicMaterial({color:'#f08080'});
         var satGeometry = new THREE.SphereGeometry(2, 10, 10, 0, Math.PI * 2);
@@ -44,7 +42,6 @@ export const OrbitViewer = () => {
 
         earth.add(satelite);
         scene.add( earth );
-
 
         camera.position.z = 300;
 
